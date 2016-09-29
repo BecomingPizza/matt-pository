@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         context = this;
         prospects = new Prospects();
 
-        //TODO: Work out why File == NULL Add file to assets
+        //TODO: Work out why File == NULL, Add file to assets
         fh = new FileHelper(context);
         fh.saveProspects();
         fh.loadProspects();
