@@ -11,6 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.veetox.networkmarketingmanager.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+    <ListView
+        android:id="@+id/prospects_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </RelativeLayout>

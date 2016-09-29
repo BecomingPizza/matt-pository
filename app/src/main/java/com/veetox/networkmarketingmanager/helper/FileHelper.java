@@ -33,81 +33,81 @@ public final class FileHelper
    }
 
 
-    public void saveProspects()
-    {
+//    public void saveProspects()
+//    {
+//
+//
+//        BufferedWriter bufferedFileWriter = null;
+//
+//        Map<String, String> prospects = Prospects.getProspects();
+//
+//        try
+//        {
+//            bufferedFileWriter = new BufferedWriter(new FileWriter(aFile));
+//
+//            for (String eachProspect : prospects.keySet())
+//            {
+//                bufferedFileWriter.write(eachProspect);
+//                bufferedFileWriter.write(",");
+//                bufferedFileWriter.write(prospects.get(eachProspect));
+//                bufferedFileWriter.newLine();
+//            }
+//
+//        }
+//        catch (Exception e)
+//        {
+//            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+//        }
+//        finally
+//        {
+//            try
+//            {
+//                bufferedFileWriter.close();
+//            }
+//            catch (Exception e)
+//            {
+//                Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//
+//    }
 
-
-        BufferedWriter bufferedFileWriter = null;
-
-        Map<String, String> prospects = Prospects.getProspects();
-
-        try
-        {
-            bufferedFileWriter = new BufferedWriter(new FileWriter(aFile));
-
-            for (String eachProspect : prospects.keySet())
-            {
-                bufferedFileWriter.write(eachProspect);
-                bufferedFileWriter.write(",");
-                bufferedFileWriter.write(prospects.get(eachProspect));
-                bufferedFileWriter.newLine();
-            }
-
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
-        }
-        finally
-        {
-            try
-            {
-                bufferedFileWriter.close();
-            }
-            catch (Exception e)
-            {
-                Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }
-
-    }
-
-    public void loadProspects()
-    {
-            Scanner bufferedScanner = null;
-            Scanner lineScanner = null;
-
-            try
-            {
-                bufferedScanner = new Scanner(new BufferedReader(new FileReader(aFile)));
-                while (bufferedScanner.hasNextLine())
-                {
-                    lineScanner = new Scanner(bufferedScanner.nextLine());
-                    lineScanner.useDelimiter(",");
-                    String uuid = lineScanner.next();
-                    String prospect = lineScanner.next();
-
-                    Prospects.addProspect(uuid, prospect);
-                }
-
-            }
-            catch (Exception e)
-            {
-                Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
-            }
-            finally
-            {
-                try
-                {
-                    bufferedScanner.close();
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
-                }
-            }
-
-            }
+//    public void loadProspects()
+//    {
+//            Scanner bufferedScanner = null;
+//            Scanner lineScanner = null;
+//
+//            try
+//            {
+//                bufferedScanner = new Scanner(new BufferedReader(new FileReader(aFile)));
+//                while (bufferedScanner.hasNextLine())
+//                {
+//                    lineScanner = new Scanner(bufferedScanner.nextLine());
+//                    lineScanner.useDelimiter(",");
+//                    String uuid = lineScanner.next();
+//                    String prospect = lineScanner.next();
+//
+//                    Prospects.addProspect(uuid, prospect);
+//                }
+//
+//            }
+//            catch (Exception e)
+//            {
+//                Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//            }
+//            finally
+//            {
+//                try
+//                {
+//                    bufferedScanner.close();
+//                }
+//                catch (Exception e)
+//                {
+//                    Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//
+//            }
 
 
 
