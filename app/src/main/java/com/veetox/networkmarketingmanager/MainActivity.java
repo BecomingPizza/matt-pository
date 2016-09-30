@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,15 +34,24 @@ public class MainActivity extends AppCompatActivity
         res = getResources();
 
         fileHelper = new FileHelper(this);
+
         prospectList = fileHelper.loadProspects();
+        fileHelper.saveProspects(prospectList);
 
         //Create the list
         ProspectListAdapter pla = new ProspectListAdapter(this,R.layout.prospects_list_layout,prospectList);
         prospectsListEntry = (ListView) findViewById(R.id.prospects_list);
         prospectsListEntry.setAdapter(pla);
 
+        //setup toolbar
+        Toolbar appToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(appToolbar);
 
     }
 
+    public void addProspect()
+    {
+
+    }
 
 }

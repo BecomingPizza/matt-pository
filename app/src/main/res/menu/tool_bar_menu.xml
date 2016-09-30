@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:yourapp="http://schemas.android.com/tools">
+
+    <!-- "Add Prospect", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_addProspect"
+        android:icon="@mipmap/ic_add_black"
+        android:title="@string/action_add_prospect"
+        yourapp:showAsAction="ifRoom"/>
+
+</menu>
