@@ -42,7 +42,7 @@ public final class FileHelper
 
         try
         {
-            File aFile = new File(context.getFilesDir(), "prospects.txt");
+            File aFile = new File(context.getFilesDir(), "prospects.csv");
             bufferedFileWriter = new BufferedWriter(new FileWriter(aFile));
 
             for (Prospects eachProspect : p)
@@ -57,7 +57,8 @@ public final class FileHelper
         }
         catch (Exception e)
         {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+            // Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
         }
         finally
         {
@@ -67,7 +68,8 @@ public final class FileHelper
             }
             catch (Exception e)
             {
-                Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+                //Toast.makeText(context, e.toString(), Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -83,7 +85,7 @@ public final class FileHelper
 
             try
             {
-                File aFile = new File(context.getFilesDir(), "prospects.txt");
+                File aFile = new File(context.getFilesDir(), "prospects.csv");
                 bufferedScanner = new Scanner(new BufferedReader(new FileReader(aFile)));
                 while (bufferedScanner.hasNextLine())
                 {
@@ -100,7 +102,8 @@ public final class FileHelper
             }
             catch (Exception e)
             {
-                Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+                //Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
             }
             finally
             {
@@ -110,7 +113,8 @@ public final class FileHelper
                 }
                 catch (Exception e)
                 {
-                    Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                    //Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
                 }
             }
                 return prospectsList;
