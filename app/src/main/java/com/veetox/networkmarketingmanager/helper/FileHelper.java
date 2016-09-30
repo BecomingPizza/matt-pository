@@ -30,6 +30,8 @@ public final class FileHelper
        context = aContext;
 
 
+
+
    }
 
 
@@ -43,6 +45,8 @@ public final class FileHelper
         try
         {
             File aFile = new File(context.getFilesDir(), "prospects.csv");
+            aFile.createNewFile();
+
             bufferedFileWriter = new BufferedWriter(new FileWriter(aFile));
 
             for (Prospects eachProspect : p)

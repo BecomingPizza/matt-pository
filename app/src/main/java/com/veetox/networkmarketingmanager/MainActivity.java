@@ -31,18 +31,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         res = getResources();
-        File aFile = new File(this.getFilesDir(), "prospects.csv");
-        try
-        {
-            aFile.createNewFile();
-            Toast.makeText(this, aFile.getAbsolutePath(), Toast.LENGTH_LONG).show();
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-        //fileHelper = new FileHelper(this);
-        //prospectList = fileHelper.loadProspects();
+
+        fileHelper = new FileHelper(this);
+        prospectList = fileHelper.loadProspects();
 
         //Create the list
         ProspectListAdapter pla = new ProspectListAdapter(this,R.layout.prospects_list_layout,prospectList);
