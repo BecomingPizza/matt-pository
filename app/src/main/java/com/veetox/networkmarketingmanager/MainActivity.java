@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity
 {
     public static ArrayList<Prospects> prospectList = new ArrayList<>();
     Resources res;
+    FileHelper fileHelper;
+
 
    ListView prospectsListEntry;
 
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity
 
         res = getResources();
 
-        Prospects p = new Prospects("Geoff Geferson", false);
-        Prospects q = new Prospects("John Jimson", true);
+        fileHelper = new FileHelper(this);
+        prospectList = fileHelper.loadProspects();
 
         //Create the list
         ProspectListAdapter pla = new ProspectListAdapter(this,R.layout.prospects_list_layout,prospectList);
