@@ -1,11 +1,5 @@
 package com.veetox.networkmarketingmanager.data;
 
-import com.veetox.networkmarketingmanager.helper.FileHelper;
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * A Prospective customer
@@ -42,6 +36,16 @@ public class Prospects
     public boolean getContacted()
     {
         return contacted;
+    }
+
+    public void setName (String aName)
+    {
+        prospectname = aName;
+    }
+
+    public void setContacted(boolean contacted)
+    {
+        this.contacted = contacted;
     }
 
 

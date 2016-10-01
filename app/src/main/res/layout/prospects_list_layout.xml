@@ -9,16 +9,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        />
+        android:onClick="onCheckboxClicked"/>
 
-    <TextView
+    <EditText
         android:id="@+id/pr_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_toRightOf="@id/pr_checkBox"/>
+        android:textColor="@color/Black"
+        android:allowUndo="true"
+        android:background="@null"
+        android:layout_toRightOf="@id/pr_checkBox"
+        android:onClick="onItemClicked"/>
 
 
 </RelativeLayout>

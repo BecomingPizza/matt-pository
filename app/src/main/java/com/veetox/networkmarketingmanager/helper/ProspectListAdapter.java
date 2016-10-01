@@ -22,10 +22,11 @@ public class ProspectListAdapter extends ArrayAdapter<Prospects>
 {
     private Context context;
     private int layoutResourceId;
-    private ArrayList<Prospects> prospect = null;
+    private ArrayList<Prospects> prospect;
 
-    public ProspectListAdapter(Context context, int layoutResourceId, ArrayList<Prospects> prospect) {
-        super(context, layoutResourceId,prospect);
+    public ProspectListAdapter(Context context, int layoutResourceId, ArrayList<Prospects> prospect)
+    {
+        super(context, layoutResourceId, prospect);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.prospect = prospect;
@@ -37,7 +38,8 @@ public class ProspectListAdapter extends ArrayAdapter<Prospects>
     {
         View v = convertView;
 
-        if (v == null) {
+        if (v == null)
+        {
             LayoutInflater vi;
             vi = LayoutInflater.from(context);
             v = vi.inflate(layoutResourceId, parent, false);
@@ -45,17 +47,20 @@ public class ProspectListAdapter extends ArrayAdapter<Prospects>
 
         Prospects p = prospect.get(position);
 
-        if (p != null) {
+        if (p != null)
+        {
             TextView prname = (TextView) v.findViewById(R.id.pr_name);
             CheckBox complete = (CheckBox) v.findViewById(R.id.pr_checkBox);
 
 
-            if (prname != null) {
+            if (prname != null)
+            {
                 prname.setText(p.getName());
             }
 
-            if (complete != null) {
-                complete.setActivated(p.getContacted());
+            if (complete != null)
+            {
+                complete.setChecked(p.getContacted());
             }
         }
 

@@ -37,30 +37,8 @@ public final class FileHelper
 
     public void saveProspects(ArrayList<Prospects> prospects)
     {
+
         ArrayList<Prospects> p = prospects;
-
-        Prospects q = new Prospects("Matt Lee", true);
-        Prospects r = new Prospects("Rosemary Watson", false);
-        Prospects s = new Prospects("Joe Bloggs", false);
-        Prospects t = new Prospects("Ronny Corbit", false);
-        Prospects u = new Prospects("Mr Man", false);
-        Prospects v = new Prospects("Mr Bond", false);
-        Prospects w = new Prospects("Mr Blobby", false);
-        Prospects x = new Prospects("Mary Rose", false);
-        Prospects y = new Prospects("Jane Doe", false);
-        Prospects z = new Prospects("Lucy Sanders", false);
-
-        p.add(q);
-        p.add(r);
-        p.add(s);
-        p.add(t);
-        p.add(u);
-        p.add(v);
-        p.add(w);
-        p.add(x);
-        p.add(y);
-        p.add(z);
-
 
         BufferedWriter bufferedFileWriter = null;
 
@@ -146,6 +124,35 @@ public final class FileHelper
             }
                 return prospectsList;
             }
+
+        public ArrayList<Prospects> testProspects()
+        {
+            ArrayList<Prospects> p = new ArrayList<>();
+
+            Prospects q = new Prospects("Matt Lee", true);
+            Prospects r = new Prospects("Rosemary Watson", false);
+            Prospects s = new Prospects("Joe Bloggs", false);
+            Prospects t = new Prospects("Ronny Corbit", false);
+            Prospects u = new Prospects("Mr Man", false);
+            Prospects v = new Prospects("Mr Bond", true);
+            Prospects w = new Prospects("Mr Blobby", false);
+            Prospects x = new Prospects("Mary Rose", false);
+            Prospects y = new Prospects("Jane Doe", false);
+            Prospects z = new Prospects("Lucy Sanders", false);
+
+            p.add(q);
+            p.add(r);
+            p.add(s);
+            p.add(t);
+            p.add(u);
+            p.add(v);
+            p.add(w);
+            p.add(x);
+            p.add(y);
+            p.add(z);
+
+            return p;
+        }
 
 
 
