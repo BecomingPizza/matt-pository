@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Network Marketing Manager</string>
+
     <string name="dmoRelationship">Build relationships with 10 people</string>
     <string name="dmoProduct">Offer product to 10 people</string>
     <string name="dmoOpportunity">Offer opportunity to 10 people</string>
     <string name="dmoTeam">Check in with team</string>
 
+    <string name="action_load_prospects">Load Prospects</string>
     <string name="action_add_prospect">Add Prospect</string>
+    <string name="action_change_status">Status</string>
 </resources>

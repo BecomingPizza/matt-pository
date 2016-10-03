@@ -5,25 +5,25 @@ package com.veetox.networkmarketingmanager.data;
  * A Prospective customer
  */
 
-public class Prospects
+public class Prospect
 {
     private String prospectname;
     private boolean contacted;
     private String stringContacted;
 
-    public Prospects(String aName, boolean contacted)
+    public Prospect(String aName, boolean contacted)
     {
         prospectname = aName;
         this.contacted = contacted;
     }
 
-    public Prospects(String aName, String contacted)
+    public Prospect(String aName, String contacted)
     {
         prospectname = aName;
         this.stringContacted = contacted;
     }
 
-    public Prospects(String aName)
+    public Prospect(String aName)
     {
         prospectname = aName;
     }
@@ -33,7 +33,7 @@ public class Prospects
         return prospectname;
     }
 
-    public boolean getContacted()
+    public boolean isChecked()
     {
         return contacted;
     }
@@ -46,6 +46,18 @@ public class Prospects
     public void setContacted(boolean contacted)
     {
         this.contacted = contacted;
+    }
+
+    public void toggleContacted()
+    {
+        if (contacted)
+        {
+            contacted = false;
+        }
+        else
+        {
+            contacted = true;
+        }
     }
 
 

@@ -1,18 +1,15 @@
 package com.veetox.networkmarketingmanager.helper;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.veetox.networkmarketingmanager.data.Prospects;
+import com.veetox.networkmarketingmanager.data.Prospect;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Scanner;
 
 
@@ -35,10 +32,10 @@ public final class FileHelper
    }
 
 
-    public void saveProspects(ArrayList<Prospects> prospects)
+    public void saveProspects(ArrayList<Prospect> prospects)
     {
 
-        ArrayList<Prospects> p = prospects;
+        ArrayList<Prospect> p = prospects;
 
         BufferedWriter bufferedFileWriter = null;
 
@@ -50,11 +47,11 @@ public final class FileHelper
 
             bufferedFileWriter = new BufferedWriter(new FileWriter(aFile));
 
-            for (Prospects eachProspect : p)
+            for (Prospect eachProspect : p)
             {
                 bufferedFileWriter.write(eachProspect.getName());
                 bufferedFileWriter.write(",");
-                bufferedFileWriter.write(String.valueOf(eachProspect.getContacted()));
+                bufferedFileWriter.write(String.valueOf(eachProspect.isChecked()));
                 bufferedFileWriter.newLine();
             }
 
@@ -80,9 +77,9 @@ public final class FileHelper
 
     }
 
-    public ArrayList<Prospects> loadProspects()
+    public ArrayList<Prospect> loadProspects()
     {
-        ArrayList<Prospects> prospectsList = new ArrayList<>();
+        ArrayList<Prospect> prospectsList = new ArrayList<>();
         Scanner bufferedScanner = null;
         Scanner lineScanner = null;
 
@@ -99,7 +96,7 @@ public final class FileHelper
                     String prospect = lineScanner.next();
                     String contacted = lineScanner.next();
 
-                    Prospects aProspect = new Prospects(prospect, contacted);
+                    Prospect aProspect = new Prospect(prospect, contacted);
                     prospectsList.add(aProspect);
 
                 }
@@ -125,20 +122,20 @@ public final class FileHelper
                 return prospectsList;
             }
 
-        public ArrayList<Prospects> testProspects()
+        public ArrayList<Prospect> testProspects()
         {
-            ArrayList<Prospects> p = new ArrayList<>();
+            ArrayList<Prospect> p = new ArrayList<>();
 
-            Prospects q = new Prospects("Matt Lee", true);
-            Prospects r = new Prospects("Rosemary Watson", false);
-            Prospects s = new Prospects("Joe Bloggs", false);
-            Prospects t = new Prospects("Ronny Corbit", false);
-            Prospects u = new Prospects("Mr Man", false);
-            Prospects v = new Prospects("Mr Bond", true);
-            Prospects w = new Prospects("Mr Blobby", false);
-            Prospects x = new Prospects("Mary Rose", false);
-            Prospects y = new Prospects("Jane Doe", false);
-            Prospects z = new Prospects("Lucy Sanders", false);
+            Prospect q = new Prospect("Matt Lee", true);
+            Prospect r = new Prospect("Rosemary Watson", false);
+            Prospect s = new Prospect("Joe Bloggs", false);
+            Prospect t = new Prospect("Ronny Corbit", false);
+            Prospect u = new Prospect("Mr Man", false);
+            Prospect v = new Prospect("Mr Bond", true);
+            Prospect w = new Prospect("Mr Blobby", true);
+            Prospect x = new Prospect("Mary Rose", false);
+            Prospect y = new Prospect("Jane Doe", false);
+            Prospect z = new Prospect("Lucy Sanders", false);
 
             p.add(q);
             p.add(r);
