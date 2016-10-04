@@ -17,6 +17,7 @@ import java.util.Scanner;
  * Created by Matt on 28/09/2016.
  */
 
+@SuppressWarnings("ConstantConditions")
 public final class FileHelper
 {
     Context context;

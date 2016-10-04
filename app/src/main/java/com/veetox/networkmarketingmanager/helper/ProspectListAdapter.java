@@ -34,7 +34,7 @@ public class ProspectListAdapter extends ArrayAdapter<Prospect>
     private Context context;
     private int layoutResourceId;
     private ArrayList<Prospect> prospect;
-    private int colourDecider = 0;
+
 
 
     public ProspectListAdapter(Context context, int layoutResourceId, ArrayList<Prospect> prospect)
@@ -43,6 +43,7 @@ public class ProspectListAdapter extends ArrayAdapter<Prospect>
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.prospect = prospect;
+
 
     }
 
@@ -92,6 +93,7 @@ public class ProspectListAdapter extends ArrayAdapter<Prospect>
                 {
 
                     Log.e("ThingLabel","Wooooh I did a thing");
+
                     MainActivity.onProspectTextBoxEdit(v);
 
                     return false;
@@ -118,11 +120,7 @@ public class ProspectListAdapter extends ArrayAdapter<Prospect>
                     ListView listView = (ListView) parentRow.getParent();
                     final int position = listView.getPositionForView(parentRow);
 
-                    //ColorDrawable listViewColor = (ColorDrawable) listView.getBackground();
-                    //int colorId = listViewColor.getColor();
-
-                    listView.getChildAt(position).setBackgroundColor(Color.GREEN);
-
+                    MainActivity.onProspectStatusChange(v, position, listView);
                 }
             });
 

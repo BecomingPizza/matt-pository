@@ -50,14 +50,7 @@ public class Prospect
 
     public void toggleContacted()
     {
-        if (contacted)
-        {
-            contacted = false;
-        }
-        else
-        {
-            contacted = true;
-        }
+        contacted = !contacted;
     }
 
 

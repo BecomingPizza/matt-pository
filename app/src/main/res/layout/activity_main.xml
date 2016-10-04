@@ -19,18 +19,18 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/pr_button_load"
+            android:id="@+id/pr_button_add"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="testProspects"
-            android:text="@string/action_load_prospects" />
+            android:onClick="createProspectList"
+            android:text="@string/action_add_prospect" />
 
         <ListView
             android:id="@+id/prospects_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pr_button_load"
+            android:layout_below="@id/pr_button_add"
             android:divider="#95a5ff"
             android:focusable="true"/>
 

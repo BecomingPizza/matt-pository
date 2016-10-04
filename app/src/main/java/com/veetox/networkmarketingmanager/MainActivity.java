@@ -3,7 +3,6 @@ package com.veetox.networkmarketingmanager;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +24,10 @@ public class MainActivity extends AppCompatActivity
     FileHelper fileHelper = new FileHelper(this);
     ListView prospectsListEntry;
     CheckBox prospectsCheckBox;
-    EditText prospectsEditText;
+    TextView prospectsTextView;
     ProspectListAdapter pla;
     Context context = this;
+    static String colour = "";
 
 
 
@@ -37,31 +37,21 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         prospectsCheckBox = (CheckBox) findViewById(R.id.pr_checkBox);
-        prospectsEditText = (EditText) findViewById(R.id.pr_name);
+        prospectsTextView = (TextView) findViewById(R.id.pr_name);
 
         res = getResources();
 
-        createProspectList();
-
-
-    }
-
-    public void testProspects(View view)
-    {
-        prospectList = fileHelper.testProspects();
-        pla.notifyDataSetChanged();
+        //createProspectList();
 
     }
 
-
-    public void createProspectList()
+    public void createProspectList(View v)
     {
         fileHelper = new FileHelper(this);
 
         //Comment before testing
         //prospectList = fileHelper.loadProspects();
 
-        //Uncomment for testing
         prospectList = fileHelper.testProspects();
 
         //Create the list
@@ -71,15 +61,32 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public static void onProspectTextBoxEdit(TextView v)
+    public static void onProspectTextBoxEdit(View v)
     {
     }
+
 
     public static void onProspectCheckBoxSelect(View v)
     {
     }
 
-    public static void onProspectStatusChange(View v)
+    public static void onProspectStatusChange(View v, int position, ListView listView)
     {
+        switch (colour)
+        {
+            case "":
+                listView.getChildAt(position).setBackgroundColor(Color.GREEN);
+                colour = "GREEN";
+                break;
+            case "GREEN":
+                listView.getChildAt(position).setBackgroundColor(Color.YELLOW);
+                colour = "YELLOW";
+                break;
+            case "YELLOW":
+                listView.getChildAt(position).setBackgroundColor(Color.parseColor("#00FFFFFF"));
+                colour = "";
+                break;
+        }
     }
+
 }
